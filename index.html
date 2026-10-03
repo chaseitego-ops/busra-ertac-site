@@ -544,9 +544,11 @@ h2{ font-weight:500; text-transform:uppercase; letter-spacing:-.035em; line-heig
     .fromTo('.mem .ph img',{scale:1.5},{scale:1.25,ease:'none',duration:1.3},0)
     .fromTo('.mem .mi',{opacity:0,y:26},{opacity:1,y:0,duration:.45,stagger:.15},'-=.35');
 
-  // DEĞERLENDİRMELER: puan sayarak gelir; masaüstünde bölüm sabitlenir ve kartlar kaydırdıkça yatayda akar
+  // DEĞERLENDİRMELER: puan ekrana girince kendiliğinden sayar; masaüstünde bölüm sabitlenir ve kartlar kaydırdıkça yatayda akar
   var revs=document.querySelector('.revs'), rvt=revs.querySelector('.rvt'), rnum=revs.querySelector('.rsum b'), rval={v:0};
-  gsap.to(rval,{v:5,ease:'none',scrollTrigger:{trigger:'.rsum',start:'top 92%',end:'top 55%',scrub:.4},onUpdate:function(){rnum.textContent=rval.v.toFixed(1).replace('.',',')}});
+  // puan, ekrana girince kaydırmadan bağımsız olarak bir kez 5,0'a kadar sayar (yarıda kalmış düşük bir puan görünmesin)
+  rnum.textContent='0,0';
+  gsap.to(rval,{v:5,duration:1.6,ease:'power2.out',scrollTrigger:{trigger:'.rsum',start:'top 96%',once:true},onUpdate:function(){rnum.textContent=rval.v.toFixed(1).replace('.',',')}});
   if(wide){
     revs.classList.add('pin');
     var rdist=function(){return Math.max(0,rvt.scrollWidth-window.innerWidth)}, rset=function(){revs.style.height=(window.innerHeight+rdist())+'px'};
