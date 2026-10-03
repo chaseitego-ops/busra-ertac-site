@@ -92,7 +92,7 @@ h2{ font-weight:500; text-transform:uppercase; letter-spacing:-.035em; line-heig
 .no-js .rv{ opacity:1; transform:none; }
 @media (max-width:860px){
   .soc a{ width:46px; height:46px; } .soc svg{ width:21px; height:21px; }
-  .nav .w{ height:68px; } .nav div{ font-size:1rem; gap:1.1rem; } .nav div a:nth-child(n+2):not(:last-child){ display:none; } .brand{ gap:.6rem; } .brand small{ padding-left:.6rem; font-size:.6875rem; }
+  .nav .w{ height:68px; } .nav div{ font-size:1rem; gap:1.1rem; } .nav div a:nth-child(n+2):not(:last-child){ display:none; } .nav div a{ padding:.7rem 0; } .more{ padding-block:.45rem .35rem; } .brand{ gap:.6rem; } .brand small{ padding-left:.6rem; font-size:.6875rem; }
   .ph{ padding-top:calc(68px + 2.2rem); } .ph .w,.split,.signs,.abody{ grid-template-columns:1fr; } .pimg{ margin:0; max-width:22rem; }
   .split > h2{ margin-bottom:1.6rem; } .posts{ grid-template-columns:1fr; } .aimg{ aspect-ratio:3/2; }
   .toc{ position:static; padding-bottom:1.5rem; border-bottom:1px solid var(--rule); }

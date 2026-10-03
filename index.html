@@ -169,7 +169,7 @@ h2{ font-weight:500; text-transform:uppercase; letter-spacing:-.035em; line-heig
 .works.pin .cap{ grid-area:1/1; opacity:0; transform:translateY(34px); transition:opacity .2s linear, transform 0s .2s; pointer-events:none; }
 .works.pin .cap.act{ opacity:1; transform:none; pointer-events:auto; transition:opacity .6s .2s var(--ease), transform .8s .2s var(--ease); }
 .works.pin .wc{ display:block; position:sticky; top:calc(15vh + var(--i) * 26px); margin-bottom:62vh; padding:0; border:0; transform-origin:50% 0; will-change:transform,filter; } .works.pin .wc:last-child{ margin-bottom:16vh; }
-.works.stack .wc{ display:block; position:sticky; top:calc(92px + var(--i) * 14px); margin-bottom:46vh; padding:.9rem .9rem 1.4rem; border:1px solid var(--rule); border-radius:20px; background:var(--dark2); transform-origin:50% 0; will-change:transform,filter; } .works.stack .wc:last-child{ margin-bottom:10vh; }
+.works.stack .wc{ display:block; position:sticky; top:calc(92px + var(--i) * 14px); margin-bottom:46vh; padding:.9rem .9rem 1.4rem; border:1px solid var(--rule); border-radius:20px; background:var(--dark2); transform-origin:50% 0; will-change:transform; } .works.stack .wc:last-child{ margin-bottom:10vh; }
 .works.stack .frame{ padding:.7rem; border-radius:14px; } .works.stack .cap{ padding:1.2rem .4rem 0; } .works.stack .tags{ margin-bottom:.9rem; }
 
 /* Konum */
@@ -210,9 +210,17 @@ h2{ font-weight:500; text-transform:uppercase; letter-spacing:-.035em; line-heig
   .nav .w{ height:68px; } .nav div{ font-size:1rem; gap:1.1rem; } .nav div a:nth-child(n+2):not(:last-child){ display:none; } .brand{ gap:.6rem; } .brand small{ padding-left:.6rem; font-size:.6875rem; }
   .row{ grid-template-columns:2.4rem minmax(0,1fr); gap:.4rem; top:calc(68px + var(--i) * 3.5rem); padding-top:1rem; } .rg{ grid-column:2; margin-top:1.6rem; }
   .cv dl > div{ grid-template-columns:1fr; } .cv dd{ grid-column:1; }
-  .srv{ gap:1.1rem; } .mth{ flex-direction:column; height:auto; } .mp,.mp.act{ flex:none; min-height:340px; } .mp img{ filter:brightness(.7); } .mx{ grid-template-rows:1fr; opacity:1; } .mx > div{ width:auto; padding-right:2.6rem; } .fqw{ grid-template-columns:1fr; } .fql{ position:static; } .fqq{ padding-right:3.4rem; } .fqa p{ padding-right:3.4rem; } .proc{ grid-template-columns:1fr; gap:1.6rem; } .pv{ top:68px; z-index:3; background:var(--dark); padding:.6rem 0 .8rem; display:flex; align-items:flex-end; gap:1rem; } .pf{ aspect-ratio:16/10; max-height:30vh; } .pc{ margin:0; white-space:nowrap; } .pst{ padding-right:3.4rem; padding-bottom:22vh; } .sf{ aspect-ratio:16/9; } .sd{ padding-right:3.6rem; } .members{ gap:.8rem; } .works.stack .cap{ order:2; }
+  .srv{ gap:1.1rem; }
+  /* uzmanlık satırları: yapışan satırın altı ekran dışında kalmasın diye görseller kalan yüksekliğe sığdırılır (yükseklik betikte hesaplanır) */
+  .row{ padding-bottom:1.25rem; } .row ul{ margin:1rem 0 1.1rem; } .row li{ padding:.55rem 0; } .more{ margin-top:.9rem; }
+  .rg{ height:170px; margin-top:1.1rem; } .rg .g1,.rg .g2{ aspect-ratio:auto; height:100%; margin-top:0; }
+  .nav div a{ padding:.7rem 0; } .more{ padding-block:.45rem .35rem; }
+  .rsum{ max-width:100%; padding-right:3.2rem; } .rsum span{ min-width:0; font-size:.8125rem; } .form-note{ padding-right:3.2rem; }
+  .mk{ backdrop-filter:none; -webkit-backdrop-filter:none; background:rgba(0,0,0,.45); }
+  .mth{ flex-direction:column; height:auto; } .mp,.mp.act{ flex:none; min-height:340px; } .mp img{ filter:brightness(.7); } .mx{ grid-template-rows:1fr; opacity:1; } .mx > div{ width:auto; padding-right:2.6rem; } .fqw{ grid-template-columns:1fr; } .fql{ position:static; } .fqq{ padding-right:3.4rem; } .fqa p{ padding-right:3.4rem; } .proc{ grid-template-columns:1fr; gap:1.6rem; } .pv{ top:68px; z-index:3; background:var(--dark); padding:.6rem 0 .8rem; display:flex; align-items:flex-end; gap:1rem; } .pf{ aspect-ratio:16/10; max-height:30vh; } .pc{ margin:0; white-space:nowrap; } .pst{ padding-right:3.4rem; padding-bottom:22vh; } .sf{ aspect-ratio:16/9; } .sd{ padding-right:3.6rem; } .members{ gap:.8rem; } .works.stack .cap{ order:2; }
   .mapcard{ position:static; max-width:none; border-radius:0; box-shadow:none; }
 }
+@media (max-width:380px){ h2{ font-size:7.6vw; } .end h2{ font-size:9vw; } }
 @media (prefers-reduced-motion:reduce){ *{ animation-duration:.01ms !important; transition-duration:.01ms !important; } .rv,.fade,.card,h1 i{ opacity:1; transform:none; } }
 </style>
 </head>
@@ -439,6 +447,21 @@ h2{ font-weight:500; text-transform:uppercase; letter-spacing:-.035em; line-heig
     form.querySelectorAll('[required]').forEach(function(f){ var good=f.type==='checkbox'?f.checked:f.value.trim().length>1; f.classList.toggle('bad',!good); if(!good&&ok){f.focus();ok=false} });
     if(!ok) return; form.querySelector('.form-done').hidden=false; form.querySelector('button').disabled=true; });
 
+  // açılış bölümü ekrandan uzunsa (telefon), alt kısmı da görünsün diye sayfayla birlikte kayar ve altı ekranın altına gelince sabitlenir
+  var heroEl=document.querySelector('.hero');
+  // ölçü olarak adres çubuğu açıkken kalan en küçük ekran yüksekliği alınır; kaydırırken çubuk açılıp kapansa da değerler oynamaz
+  var probe=document.createElement('div'); probe.style.cssText='position:fixed;top:0;left:0;width:0;height:100vh;height:100svh;visibility:hidden;pointer-events:none'; document.body.appendChild(probe);
+  var svh=function(){ return probe.offsetHeight||window.innerHeight; };
+  var fitHero=function(){ heroEl.style.top=Math.min(0,svh()-heroEl.offsetHeight)+'px'; };
+  // telefonda uzmanlık satırlarının görselleri, satır yapıştığında ekranda kalan yüksekliğe sığdırılır
+  var fitRows=function(){ if(wide) return; document.querySelectorAll('.row').forEach(function(r){ var rg=r.querySelector('.rg'); rg.style.height='';
+    var rest=r.offsetHeight-rg.offsetHeight, top=parseFloat(getComputedStyle(r).top)||0; rg.style.height=Math.max(104,Math.min(190,svh()-top-rest-12))+'px'; }); };
+  fitHero(); fitRows(); var lastW=window.innerWidth;
+  window.addEventListener('resize',function(){ if(window.innerWidth!==lastW){ lastW=window.innerWidth; fitHero(); fitRows(); } });
+  // görseller sırası gelince değil, açılıştan hemen sonra arka planda yüklenir: hızlı kaydırmada boş kutu ya da yarım açılmış görsel kalmaz
+  var warm=function(){ var list=[].slice.call(document.querySelectorAll('img[loading="lazy"]')), i=0;
+    (function next(){ var im=list[i++]; if(!im) return; im.loading='eager'; var go=function(){ setTimeout(next,60) }; if(im.complete) go(); else { im.addEventListener('load',go,{once:true}); im.addEventListener('error',go,{once:true}); } })(); };
+
   // sık sorulan sorular: tek soru açık kalır
   var fqs=document.querySelectorAll('.fq');
   fqs.forEach(function(f){ var b=f.querySelector('.fqq');
@@ -453,8 +476,9 @@ h2{ font-weight:500; text-transform:uppercase; letter-spacing:-.035em; line-heig
 
   var G=window.gsap&&window.ScrollTrigger&&!reduce;
   var intro=document.querySelector('.intro');
-  if(!G){ if(intro) intro.remove(); return; }
+  if(!G){ if(intro) intro.remove(); warm(); return; }
   gsap.registerPlugin(ScrollTrigger); document.documentElement.classList.add('g');
+  ScrollTrigger.config({ignoreMobileResize:true});   // telefonda adres çubuğu açılıp kapanınca animasyonlar yeniden hesaplanıp sıçramasın
   var lenis=null;
   if(window.Lenis){
     lenis=new Lenis({duration:1.25,smoothWheel:true});
@@ -474,7 +498,7 @@ h2{ font-weight:500; text-transform:uppercase; letter-spacing:-.035em; line-heig
   document.querySelectorAll('h1 i').forEach(function(el){var t=el.textContent;el.textContent='';t.split('').forEach(function(ch){var sp=document.createElement('span');sp.className=ch==='Ş'?'ch sx':'ch';sp.textContent=ch;el.appendChild(sp)})});
   window.scrollTo(0,0); if(lenis) lenis.stop();
   var p=intro.querySelector('path');
-  gsap.timeline({defaults:{ease:'power3.out'},onComplete:function(){intro.remove(); if(lenis) lenis.start(); ScrollTrigger.refresh();}})
+  gsap.timeline({defaults:{ease:'power3.out'},onComplete:function(){intro.remove(); if(lenis) lenis.start(); ScrollTrigger.refresh(); warm();}})
     .to(p,{attr:{d:'M0 0 L100 0 L100 52 Q58 26 0 58 Z'},duration:.75,ease:'power3.in'},.3)
     .to(p,{attr:{d:'M0 0 L100 0 L100 0 Q50 0 0 0 Z'},duration:.8,ease:'power3.out'})
     .from('h1 .ch',{yPercent:118,rotate:7,duration:1.05,stagger:.04,ease:'power4.out'},'-=1.05')
@@ -492,7 +516,7 @@ h2{ font-weight:500; text-transform:uppercase; letter-spacing:-.035em; line-heig
   var socFrom=function(){ var x=0,y=0,e=card; while(e&&e!==hero){ x+=e.offsetLeft; y+=e.offsetTop; e=e.offsetParent; }
     return {x:Math.max(x-soc.offsetWidth/2,12)-soc.offsetLeft, y:y+card.offsetHeight*.42-soc.offsetTop}; };
   if(window.scrollY<10){
-    gsap.fromTo(soc,{x:function(){return socFrom().x},y:function(){return socFrom().y}},{x:0,y:0,ease:'power2.inOut',scrollTrigger:{trigger:'.over',start:'top bottom',end:'top 35%',scrub:.8,invalidateOnRefresh:true}});
+    gsap.fromTo(soc,{x:function(){return socFrom().x},y:function(){return socFrom().y}},{x:0,y:0,ease:'power2.inOut',scrollTrigger:{trigger:'.over',start:function(){return 'top bottom+='+Math.max(0,heroEl.offsetHeight-svh())},end:'top 35%',scrub:.8,invalidateOnRefresh:true}});
   }
   gsap.to('.hero .w',{scale:.9,yPercent:-6,opacity:.25,ease:'none',scrollTrigger:{trigger:'.over',start:'top bottom',end:'top top',scrub:true}});
   gsap.fromTo('.band div',{xPercent:4},{xPercent:-38,ease:'none',scrollTrigger:{trigger:'.band',start:'top bottom',end:'bottom top',scrub:.5}});
@@ -513,17 +537,35 @@ h2{ font-weight:500; text-transform:uppercase; letter-spacing:-.035em; line-heig
 
   // HİZMETLER: çizgi başlık soldan sağa dolar, görsel ortadan açılır, açıklama sağdan yerine gelir
   gsap.utils.toArray('.srv').forEach(function(r){
-    gsap.timeline({scrollTrigger:{trigger:r,start:'top 90%',end:'top 45%',scrub:.6}})
-      .fromTo(r.querySelector('.st'),{'--p':'0%'},{'--p':'100%',ease:'none',duration:1},0)
-      .fromTo(r.querySelector('.sf'),{clipPath:'inset(50% 50% 50% 50% round 14px)'},{clipPath:'inset(0% 0% 0% 0% round 14px)',ease:'power2.inOut',duration:.8},.15)
-      .fromTo(r.querySelector('.sf img'),{scale:1.45},{scale:1,ease:'none',duration:.85},.15)
-      .fromTo(r.querySelector('.sd'),{x:wide?120:40,opacity:0},{x:0,opacity:1,ease:'power2.out',duration:.7},.3);
+    var st=r.querySelector('.st'), sf=r.querySelector('.sf'), sd=r.querySelector('.sd'), C0='inset(50% 50% 50% 50% round 14px)', C1='inset(0% 0% 0% 0% round 14px)';
+    if(wide){
+      gsap.timeline({scrollTrigger:{trigger:r,start:'top 90%',end:'top 45%',scrub:.6}})
+        .fromTo(st,{'--p':'0%'},{'--p':'100%',ease:'none',duration:1},0)
+        .fromTo(sf,{clipPath:C0},{clipPath:C1,ease:'power2.inOut',duration:.8},.15)
+        .fromTo(sf.querySelector('img'),{scale:1.45},{scale:1,ease:'none',duration:.85},.15)
+        .fromTo(sd,{x:120,opacity:0},{x:0,opacity:1,ease:'power2.out',duration:.7},.3);
+    } else {
+      // telefonda her parça kendi ekrana girişine bağlıdır ve ekranın alt üçte birinde tamamlanır; görsel yarı açık hâlde ekran ortasında kalmaz
+      gsap.fromTo(st,{'--p':'0%'},{'--p':'100%',ease:'none',scrollTrigger:{trigger:st,start:'top 94%',end:'top 66%',scrub:.5}});
+      gsap.timeline({scrollTrigger:{trigger:sf,start:'top 98%',end:'top 68%',scrub:.5}})
+        .fromTo(sf,{clipPath:C0},{clipPath:C1,ease:'power2.out',duration:1},0).fromTo(sf.querySelector('img'),{scale:1.3},{scale:1,ease:'none',duration:1},0);
+      gsap.fromTo(sd,{x:40,opacity:0},{x:0,opacity:1,ease:'power2.out',scrollTrigger:{trigger:sd,start:'top 98%',end:'top 80%',scrub:.5}});
+    }
   });
 
   // YÖNTEMLER: paneller aşağıdan sırayla açılır
-  gsap.timeline({scrollTrigger:{trigger:'.mth',start:'top 92%',end:wide?'top 30%':'top 5%',scrub:.6}})
-    .fromTo('.mp',{clipPath:'inset(100% 0% 0% 0% round 18px)',y:90},{clipPath:'inset(0% 0% 0% 0% round 18px)',y:0,ease:'power2.out',duration:1,stagger:.22},0)
-    .fromTo('.mp .mc, .mp .mk',{opacity:0},{opacity:1,duration:.4,stagger:.1},.7);
+  if(wide){
+    gsap.timeline({scrollTrigger:{trigger:'.mth',start:'top 92%',end:'top 30%',scrub:.6}})
+      .fromTo('.mp',{clipPath:'inset(100% 0% 0% 0% round 18px)',y:90},{clipPath:'inset(0% 0% 0% 0% round 18px)',y:0,ease:'power2.out',duration:1,stagger:.22},0)
+      .fromTo('.mp .mc, .mp .mk',{opacity:0},{opacity:1,duration:.4,stagger:.1},.7);
+  } else {
+    // telefonda paneller alt alta olduğundan her biri kendi girişinde, ekranın altında açılıp tamamlanır
+    gsap.utils.toArray('.mp').forEach(function(m){
+      gsap.timeline({scrollTrigger:{trigger:m,start:'top 100%',end:'top 68%',scrub:.5}})
+        .fromTo(m,{clipPath:'inset(100% 0% 0% 0% round 18px)'},{clipPath:'inset(0% 0% 0% 0% round 18px)',ease:'power2.out',duration:1},0)
+        .fromTo(m.querySelectorAll('.mc, .mk'),{opacity:0},{opacity:1,duration:.5},.5);
+    });
+  }
 
   // SÜREÇ: etkin adım parlar, görsel aşağıdan silinerek değişir, çizgi kaydırdıkça uzar
   var proc=document.querySelector('.proc'), psts=gsap.utils.toArray('.pst'), pimgs=proc.querySelectorAll('.pf img'), pcb=proc.querySelector('.pc b');
@@ -534,12 +576,12 @@ h2{ font-weight:500; text-transform:uppercase; letter-spacing:-.035em; line-heig
   gsap.fromTo('.pl',{scaleY:0},{scaleY:1,ease:'none',scrollTrigger:{trigger:'.ps',start:wide?'top 58%':'top 62%',end:wide?'bottom 58%':'bottom 62%',scrub:.4}});
 
   // ÖZGEÇMİŞ: fotoğraf soldan girip yerine oturur
-  gsap.timeline({scrollTrigger:{trigger:'.cvph',start:'top 95%',end:'top 40%',scrub:.7}})
+  gsap.timeline({scrollTrigger:{trigger:'.cvph',start:'top 95%',end:wide?'top 40%':'top 66%',scrub:.7}})
     .fromTo('.cvph',{x:function(){return -window.innerWidth*.6},opacity:.2},{x:0,opacity:1,ease:'power3.out'})
     .fromTo('.cvph img',{scale:1.45},{scale:1.15,ease:'none'},0);
 
   // EKİP: kartlar sağdan girip yerine oturur, ardından ad ve unvan gelir
-  gsap.timeline({scrollTrigger:{trigger:'.members',start:'top 92%',end:'top 30%',scrub:.7}})
+  gsap.timeline({scrollTrigger:{trigger:'.members',start:wide?'top 92%':'top 100%',end:wide?'top 30%':'top 58%',scrub:.7}})
     .fromTo('.mem',{x:function(){return window.innerWidth*.75}},{x:0,ease:'power3.out',duration:1,stagger:.3})
     .fromTo('.mem .ph img',{scale:1.5},{scale:1.25,ease:'none',duration:1.3},0)
     .fromTo('.mem .mi',{opacity:0,y:26},{opacity:1,y:0,duration:.45,stagger:.15},'-=.35');
@@ -569,7 +611,9 @@ h2{ font-weight:500; text-transform:uppercase; letter-spacing:-.035em; line-heig
     if(wide&&idx!==cur){ caps[cur].classList.remove('act'); caps[idx].classList.add('act'); cur=idx; }
     cards.forEach(function(c,i){
       var cover=clamp(0,1,(t-i-.25)*1.7), enter=i?clamp(0,1,(t-(i-1)-.15)*1.5):1;
-      gsap.set(c,{scale:1-(wide?.07:.06)*cover,filter:'brightness('+(1-.45*cover).toFixed(3)+')'+(wide?' blur('+(9*(1-enter)).toFixed(2)+'px)':'')});
+      // telefonda filtre yok: yapışan kartlarda filtre, iOS'ta kaydırırken kartın anlık kaybolmasına yol açabiliyor
+      if(wide) gsap.set(c,{scale:1-.07*cover,filter:'brightness('+(1-.45*cover).toFixed(3)+') blur('+(9*(1-enter)).toFixed(2)+'px)'});
+      else gsap.set(c,{scale:1-.06*cover,opacity:1-.4*cover});
     });
   }});
 
