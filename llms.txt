@@ -1,0 +1,46 @@
+# Büşra Ertaç — Uzman Klinik Psikolog
+
+> Bostancı (Kadıköy, İstanbul) merkezli uzman klinik psikolog. Obsesif kompulsif bozukluk (OKB), kaygı bozuklukları ve travma alanlarında; Bilişsel Davranışçı Terapi, Metakognitif Terapi ve EMDR ile çalışır. Görüşmeler yüz yüze ve online yapılır.
+
+## Temel bilgiler
+- Unvan: Uzman Klinik Psikolog
+- Eğitim: Yeditepe Üniversitesi (Psikoloji, lisans); İstanbul Kent Üniversitesi (Klinik Psikoloji, tezli yüksek lisans)
+- Terapi eğitimleri: Bilişsel Davranışçı Terapi, Metakognitif Terapi, EMDR, Bilişsel Davranışçı Sistemik Çift ve Cinsel Terapi
+- Üyelikler: Türk Psikologlar Derneği, Kognitif ve Davranış Terapileri Derneği, EMDR Türkiye Derneği
+- Adres: Bostancı Mah. Emin Ali Paşa Cad. No:106 Zerren Apt. D:19, Kadıköy, İstanbul
+- Görüşme: yüz yüze (Bostancı) ve online
+- Başvuru: siteden doğrudan randevu verilmez; önce ön görüşme başvurusu alınır
+
+## Çalışma alanı sayfaları
+- [Takıntılar ve OKB](okb.html): OKB nedir, sık görülen biçimleri, terapide nasıl çalışılır
+- [Kaygı bozuklukları](kaygi.html): panik bozukluk, yaygın kaygı, sosyal kaygı, sağlık kaygısı
+- [Travma ve EMDR](emdr.html): travma sonrası belirtiler, EMDR'ın uygulanışı
+- [Panik atak ve panik bozukluk](panik-atak.html): Panik atak nedir, neden tekrarlar, terapide nasıl çalışılır? Uzman Klinik Psikolog Büşra Ertaç ile Bostancı’da yüz yüze ve online.
+- [Sosyal kaygı (sosyal fobi)](sosyal-kaygi.html): Sosyal kaygı nedir, utangaçlıktan farkı ne, terapide nasıl çalışılır? Uzman Klinik Psikolog Büşra Ertaç, Bostancı ve online.
+- [Sağlık kaygısı](saglik-kaygisi.html): Sağlık kaygısı (hastalık kaygısı) nedir, neden sürer, terapide nasıl çalışılır? Uzman Klinik Psikolog Büşra Ertaç, Bostancı ve online.
+- [Depresyon](depresyon.html): Depresyon belirtileri nelerdir, terapide nasıl çalışılır? Uzman Klinik Psikolog Büşra Ertaç ile Bostancı’da yüz yüze ve online.
+- [Bireysel psikoterapi](bireysel-psikoterapi.html): Yetişkinlerle bireysel psikoterapi; değerlendirme, hedef belirleme ve kanıta dayalı yöntemlerle yapılandırılmış süreç.
+- [Online psikoterapi](online-psikoterapi.html): Görüntülü görüşme yoluyla yürütülen psikoterapinin yapısı, uygunluk koşulları ve gizlilik.
+- [Bilişsel Davranışçı Terapi](bilissel-davranisci-terapi.html): BDT nedir, hangi sorunlarda kullanılır, seanslar nasıl ilerler.
+- [Metakognitif Terapi](metakognitif-terapi.html): MKT nedir, BDT’den farkı, endişe ve ruminasyonla çalışma.
+- [Gizlilik ve KVKK](gizlilik-ve-kvkk.html): Görüşmelerde gizlilik ilkeleri ve kişisel verilerin işlenmesi.
+- [Çift terapisi](cift-terapisi.html): Çift terapisi ne zaman gerekir, nasıl ilerler? Uzman Klinik Psikolog Büşra Ertaç ile Bostancı’da yüz yüze ve online çift terapisi.
+- [Cinsel terapi](cinsel-terapi.html): Vajinismus, sertleşme güçlüğü, erken boşalma ve istek sorunlarında cinsel terapi nasıl ilerler? Uzman Klinik Psikolog Büşra Ertaç, Bostancı ve online.
+
+## Yazılar
+- [“Ya olursa?” döngüsü: OKB’de şüphe nasıl büyür?](okb-ya-olursa-dongusu.html): Kapıyı kilitledim mi, ocağı kapattım mı? OKB’de şüphenin neden bitmediğini ve kontrol etmenin döngüyü nasıl beslediğini anlatıyoruz.
+- [İstenmeyen düşünceler: Aklımdan geçen şey ben miyim?](istenmeyen-dusunceler.html): Zarar verme, cinsellik ya da inançla ilgili rahatsız edici düşünceler neden gelir, ne anlama gelir? OKB’de istenmeyen düşünceleri anlatıyoruz.
+- [OKB mi, titizlik mi? Aradaki fark](okb-mi-titizlik-mi.html): Düzenli ya da titiz olmak OKB anlamına gelmez. Aradaki farkı belirleyen şeyin ne olduğunu ve ne zaman destek alınması gerektiğini anlatıyoruz.
+- [Panik atak sırasında bedende ne olur?](panik-atak-bedende-ne-olur.html): Çarpıntı, nefes darlığı, baş dönmesi: panik atak belirtilerinin her birinin bedensel açıklamasını ve atağın neden kendiliğinden geçtiğini anlatıyoruz.
+- [Sağlık kaygısı: Belirtileri internette aramak neden rahatlatmaz?](saglik-kaygisi-internette-arama.html): Bir belirtiyi internette aramak neden kaygıyı artırır? Sağlık kaygısında güvence arayışının döngüyü nasıl beslediğini anlatıyoruz.
+- [Endişeyi ertelemek: “Endişe saati” nasıl uygulanır?](endise-saati.html): Durdurulamayan endişe için kullanılan endişe erteleme tekniği nedir, nasıl uygulanır? Adım adım anlatıyoruz.
+- [Topluluk önünde konuşma korkusu: Sosyal kaygı nasıl sürer?](sosyal-kaygi-topluluk-onunde-konusma.html): Sunum ve toplantılarda yaşanan yoğun kaygının arkasında ne var? Sosyal kaygıyı sürdüren üç mekanizmayı anlatıyoruz.
+- [Bir EMDR seansı nasıl geçer?](emdr-seansi-nasil-gecer.html): EMDR terapisinde seanslar nasıl ilerler, göz hareketleri ne işe yarar, seans sonrası neler olabilir? Adım adım anlatıyoruz.
+- [Çocukluk çağı yaşantıları bugünü nasıl etkiler?](cocukluk-yasantilari.html): Çocuklukta yaşanan olumsuz deneyimler yetişkinlikte nasıl iz bırakır ve bu izlerle nasıl çalışılır? Bilimsel bulgularla anlatıyoruz.
+- [İlk terapi seansında neler olur?](ilk-terapi-seansi.html): İlk psikolog görüşmesine nasıl hazırlanılır, neler konuşulur, nelerin sorulması normaldir? İlk seansı adım adım anlatıyoruz.
+- [Online terapi: Kimler için uygun, nasıl ilerler?](online-terapi.html): Online terapi yüz yüze terapi kadar etkili mi, kimler için uygundur, görüşme için ne gerekir? Sık sorulanları yanıtlıyoruz.
+- [Bostancı ve Kadıköy’de psikolog seçerken nelere bakmalı?](bostanci-kadikoy-psikolog.html): Anadolu Yakası’nda psikolog arayanlar için: unvan, eğitim, çalışma alanı ve ulaşım açısından doğru uzmanı seçmenin ölçütleri.
+
+## İletişim
+- Instagram: https://www.instagram.com/psk.busraertac/
+- Başvuru: ana sayfadaki ön görüşme formu
